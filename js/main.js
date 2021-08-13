@@ -40,10 +40,10 @@ function validateForm() {
         document.getElementById("phoneNumber_vText").innerHTML = "PhoneNumber is required";
         $("#phoneNumber_vText").removeAttr('hidden');
         return false;
-    } else if (!x.value.match(/^\d{10}$/)) {
+    }/* else if (!x.value.match(/^\d{10}$/)) {
         document.getElementById("phoneNumber_vText").innerHTML = "PhoneNumber pattern is (111)111-1111";
         return false;
-    }
+    }*/
     x = document.forms["contact-form"]["emailAddress"].value;
     if (x == "") {
         document.getElementById("emailAddress_vText").innerHTML = "Email Address is required";
