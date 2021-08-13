@@ -31,12 +31,13 @@
         <section class="p-5">
             <div class="p-3 bg-light rounded mx-auto" style="width: 550px;">
                 <div class="text-center mb-3 fs-4">Contact Us</div>
-                <form class="form">
+                <form class="form" action="index.html" name="contact-form" onsubmit="return validateForm()">
                     <div class="row mb-2 g-3 align-items-center">
                         <div class="col"><label class="col-form-label" for="firstName">First Name</label></div>
                         <div class="col">
                             <input class="form-control" type="text" id="firstName" name="firstName"
                                 placeholder="Your first name..." autofocus>
+                            <span class="text-danger" id="firstName_vText" hidden></span>
                         </div>
                     </div>
                     <div class="row mb-2 g-3 align-items-center">
@@ -44,6 +45,7 @@
                         <div class="col">
                             <input class="form-control" type="text" id="lastName" name="lastName"
                                 placeholder="Your last name...">
+                                <span class="text-danger" id="lastName_vText" hidden></span>
                         </div>
                     </div>
                     <div class="row mb-2 g-3 align-items-center">
@@ -51,12 +53,14 @@
                         <div class="col">
                             <input class="form-control" type="text" id="address" name="address"
                                 placeholder="Your address...">
+                                <span class="text-danger" id="address_vText" hidden></span>
                         </div>
                     </div>
                     <div class="row mb-2 g-3 align-items-center">
                         <div class="col"><label class="col-form-label" for="city">City</label></div>
                         <div class="col">
                             <input class="form-control" type="text" id="city" name="city" placeholder="Your city...">
+                            <span class="text-danger" id="city_vText" hidden></span>
                         </div>
                     </div>
                     <div class="row mb-2 g-3 align-items-center">
@@ -64,6 +68,7 @@
                         <div class="col">
                             <input class="form-control" type="text" id="province" name="province"
                                 placeholder="Your province...">
+                                <span class="text-danger" id="province_vText" hidden></span>
                         </div>
                     </div>
                     <div class="row mb-2 g-3 align-items-center">
@@ -71,6 +76,7 @@
                         <div class="col">
                             <input class="form-control" type="text" id="postalCode" name="postalCode"
                                 placeholder="Your postal code...">
+                                <span class="text-danger" id="postalCode_vText" hidden></span>
                         </div>
                     </div>
                     <div class="row mb-2 g-3 align-items-center">
@@ -78,6 +84,7 @@
                         <div class="col">
                             <input class="form-control" type="text" id="phoneNumber" name="phoneNumber"
                                 placeholder="Your phone number...">
+                                <span class="text-danger" id="phoneNumber_vText" hidden></span>
                         </div>
                     </div>
                     <div class="row mb-2 g-3 align-items-center">
@@ -86,6 +93,7 @@
                         <div class="col">
                             <input class="form-control" type="text" id="emailAddress" name="emailAddress"
                                 placeholder="Your email address...">
+                                <span class="text-danger" id="emailAddress_vText" hidden></span>
                         </div>
                     </div>
                     <div class="row mb-2 g-3 align-items-center">
@@ -93,12 +101,13 @@
                         <div class="col">
                             <textarea class="form-control" name="comments" id="comments"
                                 placeholder="Put your comments here.."></textarea>
+                                <span class="text-danger" id="comments_vText" hidden></span>
                         </div>
                     </div>
                     <div class="row mb-2 g-1 align-items-center">
                         <div class="col text-end">
                             <input class="btn btn-secondary" type="reset" value="Reset">
-                            <input class="btn btn-primary" type="button" id="saveContactBtn" value="Save">
+                            <input class="btn btn-primary" type="submit" id="saveContactBtn" value="Save">
                         </div>
                     </div>
                 </form>
@@ -109,14 +118,15 @@
     <footer class="footer mt-auto py-3 bg-light">
         <p class="text-center">Copyright 2021 All rights reserved</p>
     </footer>
-    
+
     <script>
-        document.getElementById("saveContactBtn").addEventListener("click", function () {
-            saveContact();
-            window.location.pathname = window.location.pathname.replace(/(.*)\/[^/]*/, "$1/" + "index.html");
-            //$(location).attr('href', "contacts.html");
-        });
+        // document.getElementById("saveContactBtn").addEventListener("click", function () {
+        //     saveContact();
+        //     window.location.pathname = window.location.pathname.replace(/(.*)\/[^/]*/, "$1/" + "index.html");
+        //     //$(location).attr('href', "contacts.html");
+        // });
     </script>
+    <script src="js/jquery-3.6.0.js"></script>
     <script src="js/main.js"></script>
 </body>
 
