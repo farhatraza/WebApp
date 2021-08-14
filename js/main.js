@@ -126,8 +126,9 @@ function generateTableHead(table, data) {
 }
 
 function generateTable(table, data) {
+    let tbody = document.createElement("tbody");
     for (let element of data) {
-        let row = table.insertRow();
+        let row = tbody.insertRow();
         row.setAttribute("onclick", "deletePage(this)");
         for (key in element) {
             let cell = row.insertCell();
@@ -135,6 +136,7 @@ function generateTable(table, data) {
             cell.appendChild(text);
         }
     }
+    table.appendChild(tbody);
 }
 
 function deleteContact(id) {
