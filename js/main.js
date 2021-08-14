@@ -33,19 +33,24 @@ function validateForm() {
     }
     x = document.forms["contact-form"]["postalCode"].value;
     if (x == "") {
-        document.getElementById("postalCode_vText").innerHTML = "PostalCode pattern is required NAN ANA ";
+        document.getElementById("postalCode_vText").innerHTML = "Postal Code is required";
+        $("#postalCode_vText").removeAttr('hidden');
+        return false;
+    } else if (null == x.match(/[0-9][a-zA-Z][0-9](-| |)[a-zA-Z][0-9][a-zA-Z]/)) {
+        document.getElementById("postalCode_vText").innerHTML = "Pattern: NAN ANA";
         $("#postalCode_vText").removeAttr('hidden');
         return false;
     }
     x = document.forms["contact-form"]["phoneNumber"].value;
     if (x == "") {
-        document.getElementById("phoneNumber_vText").innerHTML = "PhoneNumber is required";
+        $("#phoneNumber_vText").text("Phone Number is required");
         $("#phoneNumber_vText").removeAttr('hidden');
         return false;
-    }/* else if (!x.value.match(/^\d{10}$/)) {
-        document.getElementById("phoneNumber_vText").innerHTML = "PhoneNumber pattern is (111)111-1111";
+    } else if (null == x.match(/[(]?[0-9]{3}[)]?[-]?[0-9]{3}[-][0-9]{4}/)) {
+        document.getElementById("phoneNumber_vText").innerHTML = "Pattern: 123-123-1234 or (123)123-1234";
+        $("#phoneNumber_vText").removeAttr('hidden');
         return false;
-    }*/
+    }
     x = document.forms["contact-form"]["emailAddress"].value;
     if (x == "") {
         document.getElementById("emailAddress_vText").innerHTML = "Email Address is required";
