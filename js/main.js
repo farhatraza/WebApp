@@ -1,4 +1,6 @@
 function validateForm() {
+    $(".text-danger").text('');
+    $(".text-danger").attr('hidden', true);
     let x = document.forms["contact-form"]["firstName"].value;
     if (x == "") {
         document.getElementById("firstName_vText").innerHTML = "First Name is required";
